@@ -8,7 +8,6 @@ const Layout = (props) => {
 
   const flexDirectionsArray = ['row', 'row-reverse', 'column', 'column-reverse'];
   const justifyContents = [
-  
     'flex-start',
     'flex-end',
     'center',
@@ -19,11 +18,13 @@ const Layout = (props) => {
   const alignItems = ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'];
   const wraps = ['nowrap', 'wrap', 'wrap-reverse'];
   const directions = ['inherit', 'ltr', 'rtl'];
+
   const [flexDirectionIndex, setFlexDirection] = useState(0);
   const [justifyContentIndex, setJustifyContent] = useState(0);
   const [alignItemIndex, setAlignItem] = useState(0);
   const [wrapIndex, setWrap] = useState(0);
   const [aaa, setDirection] = useState(0);
+
   const hookedStyles = {
     flexDirection: flexDirectionsArray[flexDirectionIndex],
     justifyContent: justifyContents[justifyContentIndex],
@@ -31,6 +32,7 @@ const Layout = (props) => {
     flexWrap : wraps[wrapIndex],
     direction : directions[aaa],
   }  
+
   const changeSetting = (value, options, setterfunction) => {
     var targetValue = 0;
     if (value == options.length - 1) {
@@ -41,6 +43,7 @@ const Layout = (props) => {
     setterfunction(targetValue);
     console.log(options[targetValue]);
   };
+
   const Square = () => {
     const sqStyle = {
       width: 50,
@@ -49,12 +52,16 @@ const Layout = (props) => {
     };
     return <View style={sqStyle} />;
   };
+
   const [squares, setSquares] = useState([Square(), Square(), Square()]);
+
+
   return (<>
     <View style={{paddingTop:Constants.statusBarHeight}}></View>
     <View style={[styles.container, styles.playingSpace, hookedStyles]}>
       { squares.map(elem => elem) }      
     </View>
+
     <ScrollView style={[styles.container]}>
       <View style = {[styles.controlSpace]}>
         <View style={[styles.buttonView]}>
@@ -92,21 +99,13 @@ const Layout = (props) => {
             onPress={() => navigation.navigate('Home')}/>
         </View>
       </View>
+      
 
-
-
-    
-          
-            
-    
-
-          
-    
-    
-  
     </ScrollView>
+
   </>);
 }
+
 const styles = StyleSheet.create({
   container: {
     height: '50%'
@@ -115,20 +114,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: 'blue',
     borderWidth: 3
+
   },
   controlSpace: {
     backgroundColor: '#F5F5F5',
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
+
   buttonView: {
+
     width:'50%',
     padding:10
   }
 });
+
 const randomHexColor = () => {
   return '#000000'.replace(/0/g, () => {
     return (~~(Math.random() * 16)).toString(16);
   });
 };
+
 export default Layout;

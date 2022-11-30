@@ -14,9 +14,6 @@ function Home({navigation}) {
             >
                 <Text style={styles.buttonTest}>Go To Layout</Text>
             </TouchableOpacity>
-
-
-        
         </View>
 
     );
