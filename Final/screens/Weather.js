@@ -22,7 +22,11 @@ const weatherOptions = {
     },
     Snow: {
         iconName : "weather-pouring"
+    },
+    Haze: {
+        iconName: "weather-hazy"
     }
+
 
 }
 
@@ -68,6 +72,8 @@ export default class Weather extends React.Component {
         this.getLocation();
     };
 
+    
+
     render () {
 
         const {cond, temp, icon} = this.state;
@@ -75,8 +81,11 @@ export default class Weather extends React.Component {
         return (
             <View style={[styles.container]}>
                 <View style={[styles.halfcontainer]}>
-                    <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={128} color="black" />
-                    <Text style={[styles.temptitle]}> {temp} </Text>
+                <Text style={{marginBottom:40, fontSize:25, fontWeight:'bold',color:'#4169E1'}}> 현재 날씨는 ?</Text>
+
+                    <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={140} color="black" />
+                    <Text style={[styles.temptitle]}> {temp}º</Text>
+                    
                 </View>
 
             </View>
@@ -90,7 +99,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: '#E0FFFF'
     },
     halfcontainer: {
         flex: 1,
@@ -98,6 +108,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     temptitle: {
-        fontSize: 24,
+        fontSize: 27,
     }
 });

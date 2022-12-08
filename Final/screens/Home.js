@@ -4,9 +4,18 @@ import {Image, Text, Button, View, StyleSheet, TouchableOpacity} from 'react-nat
 function Home({navigation}) {
     return (
         <View style={styles.container}>
+
+            <Text style={styles.textStyle}>
+                <>이름: 노낑깡</>{"\n"}
+                <>나이: 1살</>{"\n"}
+                <>성별: 남</>
+            </Text>
+
+      
+
             <Image 
-                source={require('../assets/frog-1371919.png')}
-                style={{width:400,height:400}}    
+                source={require('../assets/IMG_5484.jpg')}
+                style={{width:300,height:300}}    
             />
             <TouchableOpacity
                 style={styles.buttoneContainer}
@@ -24,10 +33,10 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'#ebebeb'
+        backgroundColor:'#FFFACD'
     },
     buttoneContainer:{
-        backgroundColor:'black',
+        backgroundColor:'orange',
         borderRadius:5,
         padding:10,
         margin:20
@@ -37,7 +46,13 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:'#fff'
 
+    },
+    textStyle:{
+        marginBottom:20 ,
+        fontSize:20, 
+        fontWeight:'bold', 
+        color:'#228B22',
+        textAlign: 'left'
     }
 })
-
 export default Home

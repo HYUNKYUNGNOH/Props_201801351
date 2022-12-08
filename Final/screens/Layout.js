@@ -62,40 +62,42 @@ const Layout = (props) => {
       { squares.map(elem => elem) }      
     </View>
 
+
+
     <ScrollView style={[styles.container]}>
       <View style = {[styles.controlSpace]}>
         <View style={[styles.buttonView]}>
-          <Button title="CHANGE FLEX DIRECTION" 
+          <Button title="CHANGE FLEX DIRECTION" color = 'black'
             onPress={() => changeSetting(flexDirectionIndex, flexDirectionsArray, setFlexDirection)}
           />
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="CHANGE JUSTIFY CONTENT" 
+          <Button title="CHANGE JUSTIFY CONTENT" color = 'black'
             onPress={() => changeSetting(justifyContentIndex, justifyContents, setJustifyContent)}
           />
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="CHANGE ALIGN ITEMS" 
+          <Button title="CHANGE ALIGN ITEMS" color = 'black'
             onPress={() => changeSetting(alignItemIndex, alignItems, setAlignItem)}/>
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="CHANGE DIRECTION" 
+          <Button title="CHANGE DIRECTION" color = 'black'
             onPress={() => changeSetting(wrapIndex, wraps, setWrap)}/>
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="CHAGE FLEX WRAP" 
+          <Button title="CHAGE FLEX WRAP" color = 'black'
             onPress={() => changeSetting(aaa, directions, setDirection)}/>
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="ADD SQUARE" 
+          <Button title="ADD SQUARE" color = 'black'
             onPress={() => setSquares([...squares, Square()])}/>
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="DELETE SQUARE" 
+          <Button title="DELETE SQUARE" color = 'black'
             onPress={() => setSquares(squares.filter((v,i) => i != squares.length - 1))}/>
         </View>
         <View style={[styles.buttonView]}>
-          <Button title="GO TO HOME" 
+          <Button title="GO TO HOME" color = 'black'
             onPress={() => navigation.navigate('Home')}/>
         </View>
       </View>
@@ -112,12 +114,12 @@ const styles = StyleSheet.create({
   },
   playingSpace: {
     backgroundColor: 'white',
-    borderColor: 'blue',
+    borderColor: '#F08080',
     borderWidth: 3
 
   },
   controlSpace: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FFE4E1',
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
