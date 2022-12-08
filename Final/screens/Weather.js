@@ -81,7 +81,7 @@ export default class Weather extends React.Component {
         return (
             <View style={[styles.container]}>
                 <View style={[styles.halfcontainer]}>
-                <Text style={{marginBottom:40, fontSize:25, fontWeight:'bold',color:'#4169E1'}}> 현재 날씨는 ?</Text>
+                <Text style={{marginBottom:40, fontSize:28, fontWeight:'bold',color:'#4169E1'}}> 현재 날씨는 ?</Text>
 
                     <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={140} color="black" />
                     <Text style={[styles.temptitle]}> {temp}º</Text>
